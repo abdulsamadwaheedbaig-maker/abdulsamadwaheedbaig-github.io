@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script src="script.js" defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Abdul — Portfolio</title>
+  <meta name="description" content="Personal portfolio showcasing projects, skills and contact information." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav" aria-label="Main navigation">
+      <div class="brand">Abdulsamad</div>
+      <button class="hamburger" id="navToggle" aria-expanded="false" aria-controls="menu">☰</button>
+      <div class="menu" id="menu">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <button id="themeToggle" class="ghost" title="Toggle theme">Theme</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="home" class="hero">
+      <div class="intro">
+        <h1>Hi, I'm <span id="typedName">Abdulsamad</span>.</h1>
+        <p>I build modern web experiences — front-end development, UI design, and small full-stack apps. Scroll to see my projects and contact me below.</p>
+        <div class="cta">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="ghost" href="#contact">Get in touch</a>
+        </div>
+        <div style="margin-top:16px;color:var(--muted);font-size:14px">Available for freelance or full-time work.</div>
+      </div>
+
+      <aside class="profile">
+        <div class="avatar" img aria-label="Profile picture"></div>
+        <div class="meta">
+          <div>
+            <h3>Abdulsamad Baig</h3>
+            <div class="role">Front-end Developer — JavaScript / React / Node.js</div>
+          </div>
+        </div>
+        <p class="note" style="margin-top:10px;">Based in: Vancouver, Canada • Open to remote</p>
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <a class="ghost" href="#contact">Contact</a>
+          <a class="ghost" href="/resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+        </div>
+      </aside>
+    </section>
+
+    <section id="projects">
+      <div class="section-title">
+        <h2>Projects</h2>
+        <div class="note">Click a project to view details</div>
+      </div>
+
+      <div class="projects" id="projectsGrid">
+        <!-- Project cards are injected by JS. Replace with your own images and descriptions -->
+      </div>
+    </section>
+
+    <section id="skills" style="margin-top:20px">
+      <div class="section-title"><h2>Skills</h2></div>
+      <div class="two-col">
+        <div>
+          <h3>Technical</h3>
+          <div class="skill-list" id="skillList">
+            <!-- injected -->
+          </div>
+        </div>
+        <div>
+          <h3>Tools & Workflow</h3>
+          <ul style="color:var(--muted);line-height:1.8">
+            <li>Git, GitHub / CI</li>
+            <li>Figma — UI / Prototyping</li>
+            <li>Node.js, npm, Webpack / Vite</li>
+            <li>Testing — Jest / Playwright</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:26px">
+      <div class="section-title"><h2>Contact</h2></div>
+      <div class="two-col">
+        <div>
+          <p class="note">Want to work together or ask about a project? Send me a message.</p>
+          <form id="contactForm" action="#" novalidate>
+            <label class="sr-only" for="name">Name</label>
+            <input id="name" name="name" placeholder="Your name" required />
+
+            <label class="sr-only" for="email">Email</label>
+            <input id="email" name="email" placeholder="Your email" type="email" required />
+
+            <label class="sr-only" for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Brief message" required></textarea>
+
+            <button class="btn" type="submit">Send message</button>
+            <div id="formMsg" class="note" aria-live="polite"></div>
+          </form>
+        </div>
+
+
+        
+        <div>
+          <h3>Other ways to reach me</h3>
+          <p class="note">Email: <a href="abdulsamad1926@misd.edu.sa">abdulsamad1926@misd.edu.sa</a></p>
+          <p class="note">LinkedIn · GitHub · Twitter (links)</p>
+          <div style="margin-top:18px;">Location: Langley, Canada</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="yr"></span> Abdulsamad — Built with Hardwork & JavaScript</div>
+    </footer>
+
+  </main>
+
+  <!-- Modal for project details -->
+  <div class="modal-backdrop" id="modal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button id="modalClose" style="float:right;background:transparent;border:0;color:var(--muted);font-size:18px">✕</button>
+      <h3 id="modalTitle">Project title</h3>
+      <p id="modalBody" style="color:var(--muted)"></p>
+      <div id="modalLinks" style="margin-top:12px"></div>
+    </div>
+  </div>
+  
+</body>
+</html>
